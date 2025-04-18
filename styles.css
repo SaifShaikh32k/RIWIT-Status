@@ -105,7 +105,7 @@ button:active {
     background-color: #e0f7fa; /* Light cyan */
     border: 1px solid #00796b; /* Darker border for contrast */
     border-radius: 6px;
-    font-size: 36px;
+    font-size: 25px;
     color: #00796b;
     margin-bottom: 20px;
     display: flex;
