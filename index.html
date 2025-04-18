@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#4CAF50" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Consignment Status Checker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Consignment Status Checker</h1>
+
+    <div class="search-section">
+      <h2>Consignment ID</h2>
+      <input type="text" id="consignmentId" placeholder="Enter Consignment ID" autocapitalize="none" autocomplete="off" />
+      <button id="checkStatus">Check Status</button>
+    </div>
+
+    <div class="status-section">
+      <h2>Status</h2>
+      <div id="statusDisplay">Loading sheet data...</div>
+      <div id="createdAtDisplay" class="created-at-display"></div> <!-- Separate Created At section -->
+      <div id="lastRefresh" class="refresh-time">Last refreshed: --:--:--</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
