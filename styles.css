@@ -2,13 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
-    background-color: #f5f5f5;
-    padding: 10px;
+    background: linear-gradient(145deg, #e6eaf0, #ffffff);
+    padding: 20px;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -18,105 +18,103 @@ body {
 .container {
     width: 100%;
     max-width: 600px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
 }
 
 h1 {
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 1.5em;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 600;
 }
 
 h2 {
-    color: #444;
+    color: #34495e;
     margin-bottom: 15px;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .config-section, .search-section, .status-section {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 6px;
+    background-color: #f1f3f6;
+    border-radius: 12px;
+    border: 1px solid #d6dbe1;
 }
 
-input[type="file"] {
+input[type="file"], input[type="text"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 15px; /* Increased padding for better touch */
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     font-size: 16px;
-    -webkit-appearance: none; /* Remove iOS input styling */
+    transition: border-color 0.3s;
+}
+
+input[type="file"]:focus, input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
 }
 
 button {
     width: 100%;
-    padding: 15px; /* Increased padding for better touch */
-    background-color: #4CAF50;
+    padding: 15px;
+    background: linear-gradient(to right, #43cea2, #185a9d);
     color: white;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 8px;
     font-size: 16px;
-    transition: background-color 0.3s;
-    -webkit-appearance: none; /* Remove iOS button styling */
-    touch-action: manipulation; /* Improve touch response */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.1s;
 }
 
 button:active {
-    background-color: #3d8b40; /* Darker color when pressed */
-    transform: scale(0.98); /* Slight scale effect when pressed */
+    transform: scale(0.97);
 }
 
 #statusDisplay {
     padding: 30px;
-    background-color: #fff8dc;
-    border: 2px solid #ffa500;
-    border-radius: 12px;
+    background: #fff3e0;
+    border: 2px dashed #ffa500;
+    border-radius: 16px;
     min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 60px;
-    color: #000;
+    font-size: 48px;
+    color: #e65100;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     word-break: break-word;
-    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
-    transition: all 0.3s ease;
+    box-shadow: inset 0 0 15px rgba(255, 165, 0, 0.2);
 }
 
 #createdAtDisplay {
-    padding: 10px;
-    background-color: #e0f7fa; /* Light cyan */
-    border: 1px solid #00796b; /* Darker border for contrast */
-    border-radius: 6px;
-    font-size: 25px;
-    color: #00796b;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 12px;
+    background-color: #e0f7fa;
+    border: 1px solid #00897b;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #00695c;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .refresh-time {
     text-align: center;
-    font-size: 12px;
-    color: #666;
+    font-size: 13px;
+    color: #7f8c8d;
     font-style: italic;
 }
 
@@ -135,29 +133,28 @@ button:active {
     100% { transform: rotate(360deg); }
 }
 
-/* Mobile-specific optimizations */
 @media (max-width: 480px) {
     .container {
-        padding: 15px;
+        padding: 20px;
         margin: 10px;
     }
-    
+
     h1 {
-        font-size: 1.3em;
-        margin-bottom: 15px;
+        font-size: 1.5em;
+        margin-bottom: 20px;
     }
-    
+
     input[type="text"] {
-        font-size: 16px; /* Prevent zoom on iOS */
+        font-size: 16px;
     }
-    
+
     button {
-        font-size: 16px; /* Prevent zoom on iOS */
+        font-size: 16px;
     }
 
     #statusDisplay {
-        font-size: 28px; /* Scales better on mobile */
+        font-size: 28px;
         padding: 25px;
-        min-height: 80px;
+        min-height: 100px;
     }
 }
